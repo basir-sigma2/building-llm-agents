@@ -1,0 +1,58 @@
+<svg width="100%" viewBox="0 0 1080 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Recovering from a failing tool</title>
+<desc id="d">The agent calls a tool that fails; the loop catches the error and feeds it back as a tool observation; the agent reads it and tries a different action that succeeds.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .nt{font-size:15px;font-weight:700;fill:#FFFFFF;}
+  .ns{font-size:10.5px;fill:#FFFFFF;fill-opacity:.85;}
+  .bt{font-size:13px;font-weight:600;}
+  .lbl{font-size:11px;font-weight:600;fill:#6B7785;}
+  .step{font-size:11px;font-weight:700;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1080" height="580" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Recovering from a failing tool</text>
+<text class="sub" x="56" y="80">An error is caught and fed back as an observation; the agent reads it and tries a different approach.</text>
+<line x1="56" y1="96" x2="1024" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="70" y="250" width="160" height="110" rx="14" fill="#007C92"/>
+<text class="nt" x="150" y="298" text-anchor="middle">Agent</text>
+<text class="ns" x="150" y="318" text-anchor="middle">reads, decides</text>
+
+<text class="step" x="345" y="178" fill="#51626F">1 &#183; call a tool</text>
+<line x1="232" y1="262" x2="346" y2="200" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="350" y="186" width="240" height="56" rx="12" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="bt mono" x="370" y="218" fill="#51626F">read_file(&#34;notes.txt&#34;)</text>
+
+<text class="step" x="630" y="178" fill="#B4471F">2 &#183; raises error</text>
+<line x1="590" y1="214" x2="636" y2="214" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="640" y="186" width="320" height="56" rx="12" fill="#FFEDE5" stroke="#FBD9CB" stroke-dasharray="4 4"/>
+<circle cx="672" cy="214" r="13" fill="#FBE3DB" stroke="#E2A188"/>
+<path d="M666 208 L678 220 M678 208 L666 220" stroke="#C0492A" stroke-width="2.2" stroke-linecap="round"/>
+<text class="bt mono" x="694" y="210" fill="#B4471F">TOOL: ERROR</text>
+<text class="bt mono" x="694" y="228" fill="#B4471F">file not found</text>
+
+<path d="M800 244 C800 320 360 320 246 312" fill="none" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="step" x="520" y="338" text-anchor="middle" fill="#007C92">3 &#183; caught and fed back as an observation</text>
+
+<text class="step" x="345" y="404" fill="#007C92">4 &#183; try something different</text>
+<line x1="232" y1="350" x2="346" y2="410" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="350" y="396" width="240" height="56" rx="12" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="bt mono" x="370" y="428" fill="#51626F">list_files()</text>
+<line x1="590" y1="424" x2="636" y2="424" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="640" y="396" width="320" height="56" rx="12" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="672" cy="424" r="13" fill="#E1F0F3" stroke="#8FC0CB"/>
+<path d="M666 424 L671 430 L680 419" fill="none" stroke="#007C92" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="bt" x="694" y="428" fill="#044A55">found data.txt &#8212; proceed</text>
+
+<line x1="56" y1="520" x2="1024" y2="520" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="548">Errors become tool observations the agent can react to &#8212; so a failed call leads to a smarter next step, not a crash.</text>
+</svg>

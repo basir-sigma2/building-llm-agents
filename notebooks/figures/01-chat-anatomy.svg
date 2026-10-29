@@ -1,0 +1,95 @@
+<svg width="100%" viewBox="0 0 1142 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Anatomy of a chat completion</title>
+<desc id="d">A request object you control (model, temperature, messages) is sent to the API endpoint, which returns a structured response object containing choices[0].message, finish_reason, and usage.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,'Liberation Mono',monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .hdr{font-size:15px;font-weight:700;fill:#243038;}
+  .badge{font-size:10.5px;font-weight:600;fill:#FFFFFF;}
+  .k{font-size:13px;font-weight:600;fill:#243038;}
+  .v{font-size:13px;fill:#2E7385;}
+  .vn{font-size:13px;fill:#6B7785;}
+  .role{font-size:10px;font-weight:700;letter-spacing:.5px;}
+  .content{font-size:13px;fill:#243038;}
+  .modeltxt{font-size:15px;font-weight:700;fill:#FFFFFF;}
+  .modelsub{font-size:11px;fill:#FFFFFF;fill-opacity:.85;}
+  .modelpath{font-size:10px;fill:#FFFFFF;fill-opacity:.7;}
+  .note{font-size:11px;fill:#9AA4AD;}
+  .mini{font-size:11px;font-weight:600;fill:#9AA4AD;}
+  .chip{font-size:11px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1142" height="470" fill="#FFFFFF"/>
+
+<text class="title" x="56" y="52">Anatomy of a chat completion</text>
+<text class="sub" x="56" y="80">Your code builds a request object; the API returns a structured response object.</text>
+<line x1="56" y1="96" x2="1086" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="56" y="146" width="380" height="240" rx="14" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="80" cy="168" r="4" fill="#007C92"/>
+<text class="hdr mono" x="92" y="173">request</text>
+<rect x="322" y="157" width="98" height="22" rx="11" fill="#007C92"/>
+<text class="badge" x="371" y="172" text-anchor="middle">you control</text>
+<line x1="72" y1="190" x2="420" y2="190" stroke="#EEF1F3" stroke-width="1"/>
+<text class="k mono" x="72" y="216">model</text>
+<text class="v mono" x="168" y="216">&#34;gpt-4o-mini&#34;</text>
+<text class="k mono" x="72" y="244">temperature</text>
+<text class="vn mono" x="198" y="244">0.7</text>
+<text class="k mono" x="72" y="272">messages</text>
+<g>
+  <rect x="72" y="282" width="348" height="44" rx="9" fill="#ECEEF1" stroke="#D8DDE1" stroke-width="1"/>
+  <rect x="78" y="291" width="4" height="26" rx="2" fill="#51626F"/>
+  <text class="role" x="90" y="300" fill="#51626F">SYSTEM</text>
+  <text class="content" x="90" y="315">You are a helpful assistant.</text>
+</g>
+<g>
+  <rect x="72" y="334" width="348" height="44" rx="9" fill="#E1F0F3" stroke="#C5E0E6" stroke-width="1"/>
+  <rect x="78" y="343" width="4" height="26" rx="2" fill="#007C92"/>
+  <text class="role" x="90" y="352" fill="#007C92">USER</text>
+  <text class="content" x="90" y="367">What&#8217;s the capital of France?</text>
+</g>
+
+<line x1="436" y1="266" x2="488" y2="266" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="mini" x="462" y="255" text-anchor="middle">send</text>
+<rect x="496" y="218" width="150" height="96" rx="12" fill="#007C92"/>
+<text class="modelpath mono" x="571" y="246" text-anchor="middle">/chat/completions</text>
+<text class="modeltxt" x="571" y="270" text-anchor="middle">API endpoint</text>
+<text class="modelsub" x="571" y="290" text-anchor="middle">model runs here</text>
+<line x1="646" y1="266" x2="698" y2="266" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="mini" x="672" y="255" text-anchor="middle">returns</text>
+
+<rect x="706" y="146" width="380" height="240" rx="14" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="730" cy="168" r="4" fill="#FF956E"/>
+<text class="hdr mono" x="742" y="173">response</text>
+<rect x="952" y="157" width="118" height="22" rx="11" fill="#51626F"/>
+<text class="badge" x="1011" y="172" text-anchor="middle">API returns</text>
+<line x1="722" y1="190" x2="1070" y2="190" stroke="#EEF1F3" stroke-width="1"/>
+<text class="k mono" x="722" y="212">choices[0].message</text>
+<g>
+  <rect x="722" y="220" width="348" height="44" rx="9" fill="#FFEDE5" stroke="#FBD9CB" stroke-width="1"/>
+  <rect x="728" y="229" width="4" height="26" rx="2" fill="#FF956E"/>
+  <text class="role" x="740" y="238" fill="#B4471F">ASSISTANT</text>
+  <text class="content" x="740" y="253">Paris.</text>
+</g>
+<text class="k mono" x="722" y="292">finish_reason</text>
+<text class="v mono" x="862" y="292">&#34;stop&#34;</text>
+<text class="note" x="722" y="312">why it stopped: stop &#183; length &#183; tool_calls</text>
+<text class="k mono" x="722" y="338">usage</text>
+<rect x="722" y="346" width="104" height="24" rx="12" fill="#F4F6F7" stroke="#E6E9EC" stroke-width="1"/>
+<text class="chip mono" x="774" y="362" text-anchor="middle">prompt 18</text>
+<rect x="834" y="346" width="128" height="24" rx="12" fill="#F4F6F7" stroke="#E6E9EC" stroke-width="1"/>
+<text class="chip mono" x="898" y="362" text-anchor="middle">completion 2</text>
+<rect x="970" y="346" width="86" height="24" rx="12" fill="#F4F6F7" stroke="#E6E9EC" stroke-width="1"/>
+<text class="chip mono" x="1013" y="362" text-anchor="middle">total 20</text>
+
+<line x1="56" y1="420" x2="1086" y2="420" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="448">You build the request &#8212; model, messages, temperature; the API returns a structured response: read choices[0].message, finish_reason, and usage.</text>
+</svg>

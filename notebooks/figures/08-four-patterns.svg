@@ -1,0 +1,75 @@
+<svg width="100%" viewBox="0 0 1080 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Four orchestration patterns</title>
+<desc id="d">Four agent-orchestration patterns side by side: a sequential pipeline (chain), a router (one classifier picks one specialist), an orchestrator-worker (manager splits and merges), and a parallel fan-out (workers run at once, then aggregate).</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .ph{font-size:14px;font-weight:700;fill:#243038;}
+  .nd{font-size:11px;font-weight:600;fill:#044A55;}
+  .lbl{font-size:10.5px;font-weight:600;fill:#6B7785;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1080" height="700" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Four orchestration patterns</text>
+<text class="sub" x="56" y="80">Different shapes of &#8220;who runs when&#8221; &#8212; the same agents wired in different topologies.</text>
+<line x1="56" y1="96" x2="1024" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="56" y="140" width="480" height="230" rx="14" fill="#FBFCFC" stroke="#E6E9EC"/>
+<text class="ph" x="80" y="174">1 &#183; Sequential pipeline</text>
+<rect x="110" y="260" width="90" height="34" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="155" y="281" text-anchor="middle">Agent A</text>
+<rect x="250" y="260" width="90" height="34" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="295" y="281" text-anchor="middle">Agent B</text>
+<rect x="390" y="260" width="90" height="34" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="435" y="281" text-anchor="middle">Agent C</text>
+<line x1="200" y1="277" x2="246" y2="277" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="340" y1="277" x2="386" y2="277" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<text class="lbl" x="296" y="330" text-anchor="middle">each output feeds the next</text>
+
+<rect x="566" y="140" width="480" height="230" rx="14" fill="#FBFCFC" stroke="#E6E9EC"/>
+<text class="ph" x="590" y="174">2 &#183; Router</text>
+<rect x="606" y="255" width="96" height="34" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="654" y="276" text-anchor="middle">Router</text>
+<rect x="876" y="198" width="120" height="30" rx="9" fill="#F1F4F5" stroke="#E2E6EA"/><text class="nd" x="936" y="217" text-anchor="middle" fill="#9AA4AD">Specialist</text>
+<rect x="876" y="256" width="120" height="30" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="936" y="275" text-anchor="middle">Specialist</text>
+<rect x="876" y="314" width="120" height="30" rx="9" fill="#F1F4F5" stroke="#E2E6EA"/><text class="nd" x="936" y="333" text-anchor="middle" fill="#9AA4AD">Specialist</text>
+<line x1="702" y1="266" x2="872" y2="216" stroke="#CBD1D5" stroke-width="1.3"/>
+<line x1="702" y1="272" x2="872" y2="271" stroke="#007C92" stroke-width="1.8" marker-end="url(#ah)"/>
+<line x1="702" y1="278" x2="872" y2="328" stroke="#CBD1D5" stroke-width="1.3"/>
+<text class="lbl" x="700" y="330">directs to exactly one</text>
+
+<rect x="56" y="400" width="480" height="230" rx="14" fill="#FBFCFC" stroke="#E6E9EC"/>
+<text class="ph" x="80" y="434">3 &#183; Orchestrator&#8211;worker</text>
+<rect x="80" y="505" width="96" height="34" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="128" y="526" text-anchor="middle">Manager</text>
+<rect x="240" y="468" width="110" height="28" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="295" y="486" text-anchor="middle">Worker</text>
+<rect x="240" y="508" width="110" height="28" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="295" y="526" text-anchor="middle">Worker</text>
+<rect x="240" y="548" width="110" height="28" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="295" y="566" text-anchor="middle">Worker</text>
+<rect x="416" y="505" width="90" height="34" rx="9" fill="#ECEEF1" stroke="#D8DDE1"/><text class="nd" x="461" y="526" text-anchor="middle" fill="#51626F">Merge</text>
+<line x1="176" y1="516" x2="236" y2="484" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="176" y1="522" x2="236" y2="522" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="176" y1="528" x2="236" y2="560" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="350" y1="484" x2="412" y2="516" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="350" y1="522" x2="412" y2="522" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="350" y1="560" x2="412" y2="528" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<text class="lbl" x="296" y="606" text-anchor="middle">splits, then merges results</text>
+
+<rect x="566" y="400" width="480" height="230" rx="14" fill="#FBFCFC" stroke="#E6E9EC"/>
+<text class="ph" x="590" y="434">4 &#183; Parallel fan-out</text>
+<rect x="590" y="505" width="90" height="34" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="635" y="526" text-anchor="middle">Source</text>
+<rect x="748" y="468" width="110" height="28" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="803" y="486" text-anchor="middle">Worker</text>
+<rect x="748" y="508" width="110" height="28" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="803" y="526" text-anchor="middle">Worker</text>
+<rect x="748" y="548" width="110" height="28" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/><text class="nd" x="803" y="566" text-anchor="middle">Worker</text>
+<rect x="924" y="505" width="100" height="34" rx="9" fill="#ECEEF1" stroke="#D8DDE1"/><text class="nd" x="974" y="526" text-anchor="middle" fill="#51626F">Aggregate</text>
+<line x1="680" y1="516" x2="744" y2="484" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="680" y1="522" x2="744" y2="522" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="680" y1="528" x2="744" y2="560" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="858" y1="484" x2="920" y2="516" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="858" y1="522" x2="920" y2="522" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="858" y1="560" x2="920" y2="528" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<text class="lbl" x="806" y="606" text-anchor="middle">all run at once, then aggregate</text>
+
+<line x1="56" y1="656" x2="1024" y2="656" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="684">Sequential, router, orchestrator&#8211;worker, and parallel fan-out are just four ways to arrange which agent runs when.</text>
+</svg>

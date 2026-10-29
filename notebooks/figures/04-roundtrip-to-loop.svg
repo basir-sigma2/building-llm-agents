@@ -1,0 +1,80 @@
+<svg width="100%" viewBox="0 0 1092 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">From a manual round trip to an agent</title>
+<desc id="d">Left: hand-written code with a fixed number of steps. Right: the same logic wrapped in a while-loop that repeats until the model is done, handling any number of tool calls.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .ptitle{font-size:17px;font-weight:700;fill:#243038;}
+  .ptag{font-size:11px;font-weight:600;}
+  .code{font-size:13px;fill:#243038;}
+  .tag2{font-size:9.5px;font-weight:600;fill:#9AA4AD;}
+  .note{font-size:12px;font-weight:600;}
+  .chip{font-size:12px;font-weight:700;}
+  .chips{font-size:10.5px;fill:#6B7785;}
+  .vs{font-size:11px;font-weight:700;fill:#9AA4AD;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1092" height="560" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">From a manual round trip to an agent</text>
+<text class="sub" x="56" y="80">Wrap the round trip in a loop, and you no longer hard-code how many tools the task needs.</text>
+<line x1="56" y1="96" x2="1036" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="56" y="140" width="470" height="350" rx="16" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="80" cy="166" r="5" fill="#51626F"/>
+<text class="ptitle" x="94" y="171">Manual round trip</text>
+<rect x="416" y="152" width="86" height="22" rx="11" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="ptag" x="459" y="167" text-anchor="middle" fill="#51626F">fixed steps</text>
+<line x1="80" y1="190" x2="502" y2="190" stroke="#EEF1F3" stroke-width="1"/>
+
+<rect x="80" y="210" width="422" height="40" rx="9" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="code mono" x="96" y="235">out = model(messages)</text>
+<text class="tag2" x="490" y="225" text-anchor="end">step 1</text>
+<line x1="291" y1="252" x2="291" y2="274" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="80" y="276" width="422" height="40" rx="9" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="code mono" x="96" y="301">result = run_tool(call)</text>
+<text class="tag2" x="490" y="291" text-anchor="end">step 2</text>
+<line x1="291" y1="318" x2="291" y2="340" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="80" y="342" width="422" height="40" rx="9" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="code mono" x="96" y="367">out = model(messages)</text>
+<text class="tag2" x="490" y="357" text-anchor="end">step 3</text>
+<text class="note" x="80" y="420" fill="#51626F">A fixed number of steps &#8212; written by hand.</text>
+<text class="note" x="80" y="446" fill="#B4471F">Needs 5 tools? You&#8217;d hand-write each one.</text>
+
+<circle cx="546" cy="300" r="16" fill="#FFFFFF" stroke="#E2E6EA"/>
+<text class="vs" x="546" y="304" text-anchor="middle">vs</text>
+
+<rect x="566" y="140" width="470" height="350" rx="16" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="590" cy="166" r="5" fill="#007C92"/>
+<text class="ptitle" x="604" y="171">Wrapped in a loop</text>
+<rect x="944" y="152" width="92" height="22" rx="11" fill="#E1F0F3" stroke="#C5E0E6"/>
+<text class="ptag" x="990" y="167" text-anchor="middle" fill="#007C92">any number</text>
+<line x1="590" y1="190" x2="1012" y2="190" stroke="#EEF1F3" stroke-width="1"/>
+
+<text class="code mono" x="606" y="218" fill="#6B7785">while not done:</text>
+<rect x="606" y="226" width="406" height="178" rx="12" fill="#FBFCFC" stroke="#CBD1D5" stroke-width="1" stroke-dasharray="4 4"/>
+
+<rect x="624" y="242" width="334" height="40" rx="9" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="630" y="251" width="4" height="22" rx="2" fill="#007C92"/>
+<text class="code" x="644" y="267" fill="#044A55">Reason &#183; pick the next action</text>
+<line x1="791" y1="284" x2="791" y2="296" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="624" y="298" width="334" height="40" rx="9" fill="#FFEDE5" stroke="#FBD9CB"/>
+<rect x="630" y="307" width="4" height="22" rx="2" fill="#FF956E"/>
+<text class="code" x="644" y="323" fill="#B4471F">Act &#183; call a tool</text>
+<line x1="791" y1="340" x2="791" y2="352" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="624" y="354" width="334" height="40" rx="9" fill="#ECEEF1" stroke="#D8DDE1"/>
+<rect x="630" y="363" width="4" height="22" rx="2" fill="#51626F"/>
+<text class="code" x="644" y="379" fill="#51626F">Observe &#183; append the result</text>
+<path d="M958 374 C986 366 986 268 958 262" fill="none" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<text class="chips" x="978" y="320" text-anchor="middle">repeat</text>
+<text class="note" x="606" y="436" fill="#007C92">Repeats until done &#8212; 2, 5, or any number.</text>
+
+<line x1="56" y1="510" x2="1036" y2="510" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="538">An agent is just the manual round trip wrapped in a while-loop &#8212; so it handles any number of tool calls without you knowing the count up front.</text>
+</svg>

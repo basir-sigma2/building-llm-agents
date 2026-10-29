@@ -1,0 +1,58 @@
+<svg width="100%" viewBox="0 0 1080 556" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Supervisor: routing among specialist agents</title>
+<desc id="d">A central supervisor repeatedly decides who acts next, choosing a specialist such as researcher or writer, or done. The chosen specialist runs, state updates, and control returns to the supervisor, with a max-steps safety stop.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .nt{font-size:16px;font-weight:700;}
+  .ns{font-size:11px;}
+  .lbl{font-size:11px;font-weight:600;fill:#6B7785;}
+  .cap{font-size:11.5px;font-weight:600;fill:#6B7785;}
+  .badge{font-size:11px;font-weight:600;fill:#B4471F;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1080" height="556" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Supervisor: routing among specialist agents</text>
+<text class="sub" x="56" y="80">A supervisor looks at the state, decides who acts next, then loops back when they finish.</text>
+<line x1="56" y1="96" x2="1024" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<path d="M770 200 C770 124 220 124 220 234" fill="none" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="495" y="134" text-anchor="middle">specialist runs &#8594; state updates &#8594; back to supervisor</text>
+
+<rect x="120" y="236" width="200" height="100" rx="16" fill="#007C92"/>
+<text class="nt" x="220" y="282" text-anchor="middle" fill="#FFFFFF">Supervisor</text>
+<text class="ns" x="220" y="302" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.85">picks who acts next</text>
+
+<rect x="560" y="170" width="210" height="60" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="570" y="184" width="5" height="32" rx="2" fill="#007C92"/>
+<text class="nt" x="586" y="206" font-size="15" fill="#044A55">Researcher</text>
+
+<rect x="560" y="258" width="210" height="60" rx="14" fill="#FFEDE5" stroke="#FBD9CB"/>
+<rect x="570" y="272" width="5" height="32" rx="2" fill="#FF956E"/>
+<text class="nt" x="586" y="294" font-size="15" fill="#B4471F">Writer</text>
+
+<rect x="560" y="346" width="210" height="58" rx="14" fill="#FFFFFF" stroke="#007C92" stroke-width="1.5"/>
+<circle cx="588" cy="375" r="12" fill="#E1F0F3" stroke="#8FC0CB"/>
+<path d="M582 375 L587 381 L596 370" fill="none" stroke="#007C92" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="nt" x="610" y="380" font-size="14" fill="#007C92">Done &#8212; return</text>
+
+<line x1="320" y1="266" x2="556" y2="200" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="430" y="224" text-anchor="middle">choose</text>
+<line x1="320" y1="290" x2="556" y2="288" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="430" y="280" text-anchor="middle">choose</text>
+<line x1="320" y1="314" x2="556" y2="376" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="436" y="360" text-anchor="middle">or done</text>
+
+<rect x="560" y="416" width="210" height="22" rx="11" fill="#FFEDE5" stroke="#FBD9CB"/>
+<text class="badge" x="665" y="431" text-anchor="middle">+ max-steps safety exit</text>
+<text class="cap" x="120" y="386">the &#8220;tools&#8221; it chooses between are other agents</text>
+
+<line x1="56" y1="500" x2="1024" y2="500" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="528">It&#8217;s the agent loop again, but the &#8220;tools&#8221; the supervisor chooses between are other agents &#8212; with a max-steps stop as a safety exit.</text>
+</svg>

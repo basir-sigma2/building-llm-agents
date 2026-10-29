@@ -1,0 +1,97 @@
+<svg width="100%" viewBox="0 0 1080 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">A tool call is a four-message round trip</title>
+<desc id="d">Your code sends a request; the model returns tool_calls; your code runs the function and appends the tool result; the model returns the final answer. The message list grows by one message at each step.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,'Liberation Mono',monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .actor{font-size:14px;font-weight:700;}
+  .actorsub{font-size:10.5px;}
+  .steplbl{font-size:12px;font-weight:600;fill:#51626F;}
+  .frtxt{font-size:10.5px;font-weight:600;}
+  .callout{font-size:11px;font-weight:600;fill:#B4471F;}
+  .railhdr{font-size:12px;font-weight:600;fill:#6B7785;}
+  .role{font-size:10px;font-weight:700;letter-spacing:.5px;}
+  .content{font-size:13px;fill:#243038;}
+  .selfbox{font-size:10.5px;font-weight:600;fill:#FFFFFF;}
+  .tag2{font-size:9.5px;font-weight:600;fill:#9AA4AD;}
+  .take{font-size:13.5px;fill:#2E3038;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#6B7785" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1080" height="660" fill="#FFFFFF"/>
+
+<text class="title" x="56" y="52">A tool call is a four-message round trip</text>
+<text class="sub" x="56" y="80">The model never runs anything &#8212; it requests a function; your code executes it and returns the result.</text>
+<line x1="56" y1="96" x2="1020" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="130" y="118" width="160" height="46" rx="10" fill="#ECEEF1" stroke="#D8DDE1" stroke-width="1"/>
+<text class="actor" x="210" y="140" text-anchor="middle" fill="#51626F">Your code</text>
+<text class="actorsub" x="210" y="156" text-anchor="middle" fill="#6B7785">you decide what runs</text>
+<rect x="480" y="118" width="160" height="46" rx="10" fill="#007C92"/>
+<text class="actor" x="560" y="140" text-anchor="middle" fill="#FFFFFF">Model (LLM)</text>
+<text class="actorsub" x="560" y="156" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.85">requests only</text>
+
+<line x1="210" y1="164" x2="210" y2="590" stroke="#CBD1D5" stroke-width="1.2" stroke-dasharray="3 5"/>
+<line x1="560" y1="164" x2="560" y2="590" stroke="#A9CDD6" stroke-width="1.2" stroke-dasharray="3 5"/>
+
+<text class="steplbl" x="385" y="206" text-anchor="middle">1 &#183; send request</text>
+<line x1="214" y1="214" x2="556" y2="214" stroke="#6B7785" stroke-width="1.6" marker-end="url(#ah)"/>
+
+<text class="steplbl" x="385" y="294" text-anchor="middle">2 &#183; model returns tool_calls</text>
+<line x1="556" y1="302" x2="214" y2="302" stroke="#6B7785" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="300" y="312" width="190" height="20" rx="10" fill="#FFEDE5" stroke="#FBD9CB" stroke-width="1"/>
+<text class="frtxt mono" x="395" y="326" text-anchor="middle" fill="#B4471F">finish_reason = tool_calls</text>
+
+<rect x="150" y="346" width="120" height="34" rx="8" fill="#51626F"/>
+<text class="selfbox mono" x="210" y="367" text-anchor="middle">run get_weather()</text>
+<text class="callout" x="290" y="367">your code runs it &#8212; the model can&#8217;t</text>
+
+<text class="steplbl" x="385" y="404" text-anchor="middle">3 &#183; append tool result, ask again</text>
+<line x1="214" y1="412" x2="556" y2="412" stroke="#6B7785" stroke-width="1.6" marker-end="url(#ah)"/>
+
+<text class="steplbl" x="385" y="492" text-anchor="middle">4 &#183; final answer</text>
+<line x1="556" y1="500" x2="214" y2="500" stroke="#6B7785" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="315" y="510" width="160" height="20" rx="10" fill="#E1F0F3" stroke="#C5E0E6" stroke-width="1"/>
+<text class="frtxt mono" x="395" y="524" text-anchor="middle" fill="#007C92">finish_reason = stop</text>
+
+<text class="railhdr" x="730" y="188">messages list &#8212; grows one per step</text>
+<line x1="718" y1="200" x2="718" y2="534" stroke="#E2E6EA" stroke-width="1"/>
+
+<g>
+  <rect x="730" y="200" width="290" height="46" rx="9" fill="#E1F0F3" stroke="#C5E0E6" stroke-width="1"/>
+  <rect x="736" y="209" width="4" height="26" rx="2" fill="#007C92"/>
+  <text class="role" x="748" y="218" fill="#007C92">USER</text>
+  <text class="content" x="748" y="233">What&#8217;s the weather in Oslo?</text>
+  <text class="tag2" x="1008" y="218" text-anchor="end">step 1</text>
+</g>
+<g>
+  <rect x="730" y="288" width="290" height="52" rx="9" fill="#FFEDE5" stroke="#FBD9CB" stroke-width="1"/>
+  <rect x="736" y="297" width="4" height="34" rx="2" fill="#FF956E"/>
+  <text class="role" x="748" y="306" fill="#B4471F">ASSISTANT</text>
+  <text class="content mono" x="748" y="325" style="font-size:12px">tool_calls: get_weather(&#34;Oslo&#34;)</text>
+  <text class="tag2" x="1008" y="306" text-anchor="end">step 2</text>
+</g>
+<g>
+  <rect x="730" y="398" width="290" height="46" rx="9" fill="#ECEEF1" stroke="#D8DDE1" stroke-width="1"/>
+  <rect x="736" y="407" width="4" height="26" rx="2" fill="#51626F"/>
+  <text class="role" x="748" y="416" fill="#51626F">TOOL</text>
+  <text class="content" x="748" y="431">get_weather &#8594; 7&#176;C, rain</text>
+  <text class="tag2" x="1008" y="416" text-anchor="end">step 3</text>
+</g>
+<g>
+  <rect x="730" y="486" width="290" height="46" rx="9" fill="#FFEDE5" stroke="#FBD9CB" stroke-width="1"/>
+  <rect x="736" y="495" width="4" height="26" rx="2" fill="#FF956E"/>
+  <text class="role" x="748" y="504" fill="#B4471F">ASSISTANT</text>
+  <text class="content" x="748" y="519">It&#8217;s 7&#176;C and raining in Oslo.</text>
+  <text class="tag2" x="1008" y="504" text-anchor="end">step 4</text>
+</g>
+
+<line x1="56" y1="612" x2="1020" y2="612" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="640">A tool call is a four-message round trip: the model only requests the call; your code runs the function, returns the result, and then the model answers.</text>
+</svg>

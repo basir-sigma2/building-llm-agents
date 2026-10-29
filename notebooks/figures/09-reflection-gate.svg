@@ -1,0 +1,68 @@
+<svg width="100%" viewBox="0 0 1080 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Reflection with a quality gate</title>
+<desc id="d">Generate then critique; a decision gate asks if it is good enough. If yes, return the result; if no, revise and loop back to critique. A max-rounds cap is a second exit so the loop cannot run forever.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .nt{font-size:15px;font-weight:700;}
+  .ns{font-size:10.5px;fill:#6B7785;}
+  .nsw{font-size:10.5px;fill:#FFFFFF;fill-opacity:.85;}
+  .gate{font-size:12.5px;font-weight:700;fill:#243038;}
+  .lbl{font-size:11px;font-weight:600;fill:#6B7785;}
+  .yn{font-size:11px;font-weight:700;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1080" height="560" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Reflection with a quality gate</text>
+<text class="sub" x="56" y="80">Generate, critique, then a gate decides: return if good enough, or revise and loop &#8212; bounded by max rounds.</text>
+<line x1="56" y1="96" x2="1024" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="80" y="234" width="160" height="72" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="90" y="248" width="5" height="44" rx="2" fill="#007C92"/>
+<text class="nt" x="106" y="266" fill="#044A55">Generate</text>
+<text class="ns" x="106" y="286">produce a draft</text>
+
+<rect x="312" y="234" width="160" height="72" rx="14" fill="#FFEDE5" stroke="#FBD9CB"/>
+<rect x="322" y="248" width="5" height="44" rx="2" fill="#FF956E"/>
+<text class="nt" x="338" y="266" fill="#B4471F">Critique</text>
+<text class="ns" x="338" y="286">find problems</text>
+
+<polygon points="620,222 692,270 620,318 548,270" fill="#F1F4F5" stroke="#C9CFD3" stroke-width="1.2"/>
+<text class="gate" x="620" y="266" text-anchor="middle">good</text>
+<text class="gate" x="620" y="282" text-anchor="middle">enough?</text>
+
+<rect x="760" y="234" width="200" height="72" rx="14" fill="#FFFFFF" stroke="#007C92" stroke-width="1.5"/>
+<circle cx="786" cy="270" r="13" fill="#E1F0F3" stroke="#8FC0CB"/>
+<path d="M780 270 L785 276 L794 265" fill="none" stroke="#007C92" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="nt" x="808" y="266" font-size="14" fill="#007C92">Return result</text>
+<text class="ns" x="808" y="286">good enough</text>
+
+<rect x="540" y="402" width="160" height="64" rx="14" fill="#FFEDE5" stroke="#FBD9CB"/>
+<rect x="550" y="414" width="5" height="40" rx="2" fill="#FF956E"/>
+<text class="nt" x="566" y="430" fill="#B4471F">Revise</text>
+<text class="ns" x="566" y="448">improve the draft</text>
+
+<rect x="760" y="408" width="200" height="52" rx="14" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="nt" x="786" y="432" font-size="14" fill="#51626F">Stop</text>
+<text class="ns" x="786" y="448">max rounds reached</text>
+
+<line x1="240" y1="270" x2="308" y2="270" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="472" y1="270" x2="544" y2="270" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="692" y1="270" x2="756" y2="270" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="yn" x="724" y="262" text-anchor="middle" fill="#007C92">yes</text>
+<line x1="620" y1="318" x2="620" y2="400" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="yn" x="634" y="362" fill="#B4471F">no</text>
+<path d="M540 434 C440 434 392 374 392 308" fill="none" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="430" y="364" text-anchor="middle">revise again</text>
+<line x1="700" y1="434" x2="756" y2="434" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="728" y="426" text-anchor="middle">after N rounds</text>
+
+<line x1="56" y1="512" x2="1024" y2="512" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="540">The gate gives the loop an explicit termination condition; a max-rounds cap is the second exit so it can&#8217;t run forever.</text>
+</svg>

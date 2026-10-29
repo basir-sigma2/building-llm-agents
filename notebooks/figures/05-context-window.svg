@@ -1,0 +1,55 @@
+<svg width="100%" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Why long conversations overflow the context window</title>
+<desc id="d">A bar chart with one bar per turn. Because the full history is resent each turn, tokens in the request climb steadily and eventually cross the context-window limit, where the last bar overflows.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .ax{font-size:12px;fill:#6B7785;}
+  .axt{font-size:12px;font-weight:600;fill:#6B7785;}
+  .lim{font-size:12px;font-weight:600;fill:#B4471F;}
+  .flag{font-size:11px;font-weight:600;fill:#B4471F;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1000" height="600" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Why long conversations overflow the context window</text>
+<text class="sub" x="56" y="80">Every turn resends the full history, so tokens grow turn after turn &#8212; until they cross the model&#8217;s limit.</text>
+<line x1="56" y1="96" x2="944" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<line x1="110" y1="150" x2="110" y2="480" stroke="#C9CFD3" stroke-width="1.2"/>
+<line x1="110" y1="480" x2="920" y2="480" stroke="#C9CFD3" stroke-width="1.2"/>
+<text class="axt" x="64" y="320" text-anchor="middle" transform="rotate(-90 64 320)">tokens in request</text>
+<text class="axt" x="515" y="558" text-anchor="middle">conversation turn</text>
+
+<line x1="110" y1="205" x2="920" y2="205" stroke="#E08A6B" stroke-width="1.4" stroke-dasharray="6 5"/>
+<text class="lim" x="916" y="198" text-anchor="end">context window limit</text>
+
+<rect x="130" y="443" width="80" height="37" rx="3" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="230" y="410" width="80" height="70" rx="3" fill="#D6EBEF" stroke="#C5E0E6"/>
+<rect x="330" y="377" width="80" height="103" rx="3" fill="#C9E5EA" stroke="#C5E0E6"/>
+<rect x="430" y="341" width="80" height="139" rx="3" fill="#A9D5DE" stroke="#9FC9D2"/>
+<rect x="530" y="300" width="80" height="180" rx="3" fill="#7FC2CF" stroke="#9FC9D2"/>
+<rect x="630" y="256" width="80" height="224" rx="3" fill="#4FAAB9" stroke="#3F9AAB"/>
+<rect x="730" y="209" width="80" height="271" rx="3" fill="#1F8EA1" stroke="#0F7E91"/>
+<rect x="830" y="157" width="80" height="323" rx="3" fill="#FF956E" stroke="#E8754C"/>
+
+<text class="ax" x="170" y="498" text-anchor="middle">1</text>
+<text class="ax" x="270" y="498" text-anchor="middle">2</text>
+<text class="ax" x="370" y="498" text-anchor="middle">3</text>
+<text class="ax" x="470" y="498" text-anchor="middle">4</text>
+<text class="ax" x="570" y="498" text-anchor="middle">5</text>
+<text class="ax" x="670" y="498" text-anchor="middle">6</text>
+<text class="ax" x="770" y="498" text-anchor="middle">7</text>
+<text class="ax" x="870" y="498" text-anchor="middle">8</text>
+
+<line x1="788" y1="130" x2="868" y2="152" stroke="#9AA4AD" stroke-width="1.4" marker-end="url(#ah)"/>
+<text class="flag" x="784" y="126" text-anchor="end">overflow &#8212; history no longer fits</text>
+
+<line x1="56" y1="540" x2="944" y2="540" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="568">Because the whole history is resent each turn, token use climbs until it hits the limit &#8212; the point where memory management becomes necessary.</text>
+</svg>

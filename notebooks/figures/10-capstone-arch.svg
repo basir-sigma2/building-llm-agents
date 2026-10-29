@@ -1,0 +1,85 @@
+<svg width="100%" viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Capstone: a multi-agent research assistant</title>
+<desc id="d">A planner splits a question into subtopics; several researcher agents with search run in parallel; their notes merge; a writer synthesises a draft; a critic reviews and triggers at most one revision before the report is returned. Each stage is labelled with its pattern.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .nt{font-size:14px;font-weight:700;}
+  .ns{font-size:10px;fill:#6B7785;}
+  .nsw{font-size:10px;fill:#FFFFFF;fill-opacity:.85;}
+  .lbl{font-size:11px;font-weight:600;fill:#6B7785;}
+  .pat{font-size:11px;font-weight:700;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1100" height="620" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Capstone: a multi-agent research assistant</text>
+<text class="sub" x="56" y="80">A planner splits the question, researchers gather notes in parallel, a writer synthesises, a critic revises once.</text>
+<line x1="56" y1="96" x2="1044" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="60" y="232" width="120" height="64" rx="13" fill="#E1F0F3" stroke="#C5E0E6"/>
+<text class="nt" x="120" y="262" text-anchor="middle" fill="#044A55">Question</text>
+<text class="ns" x="120" y="280" text-anchor="middle">the task</text>
+
+<rect x="220" y="232" width="130" height="64" rx="13" fill="#007C92"/>
+<text class="nt" x="285" y="262" text-anchor="middle" fill="#FFFFFF">Planner</text>
+<text class="nsw" x="285" y="280" text-anchor="middle">split into subtopics</text>
+
+<rect x="430" y="176" width="170" height="48" rx="12" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="438" y="187" width="4" height="26" rx="2" fill="#007C92"/>
+<text class="nt" x="452" y="197" font-size="13" fill="#044A55">Researcher</text>
+<text class="ns mono" x="452" y="213">+ search</text>
+<rect x="430" y="234" width="170" height="48" rx="12" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="438" y="245" width="4" height="26" rx="2" fill="#007C92"/>
+<text class="nt" x="452" y="255" font-size="13" fill="#044A55">Researcher</text>
+<text class="ns mono" x="452" y="271">+ search</text>
+<rect x="430" y="292" width="170" height="48" rx="12" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="438" y="303" width="4" height="26" rx="2" fill="#007C92"/>
+<text class="nt" x="452" y="313" font-size="13" fill="#044A55">Researcher</text>
+<text class="ns mono" x="452" y="329">+ search</text>
+
+<rect x="660" y="232" width="110" height="64" rx="13" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="nt" x="715" y="262" text-anchor="middle" fill="#51626F">Merge</text>
+<text class="ns" x="715" y="280" text-anchor="middle">notes</text>
+
+<rect x="810" y="232" width="140" height="64" rx="13" fill="#007C92"/>
+<text class="nt" x="880" y="262" text-anchor="middle" fill="#FFFFFF">Writer</text>
+<text class="nsw" x="880" y="280" text-anchor="middle">synthesise a draft</text>
+
+<line x1="180" y1="264" x2="216" y2="264" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="350" y1="256" x2="426" y2="200" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="350" y1="264" x2="426" y2="258" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="350" y1="272" x2="426" y2="316" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="600" y1="200" x2="656" y2="250" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="600" y1="258" x2="656" y2="262" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="600" y1="316" x2="656" y2="278" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="770" y1="264" x2="806" y2="264" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+
+<text class="pat" x="285" y="322" text-anchor="middle" fill="#007C92">planner &#8594; executor</text>
+<text class="pat" x="515" y="362" text-anchor="middle" fill="#007C92">parallel fan-out</text>
+
+<rect x="700" y="432" width="150" height="64" rx="13" fill="#FFEDE5" stroke="#FBD9CB"/>
+<text class="nt" x="775" y="462" text-anchor="middle" fill="#B4471F">Critic</text>
+<text class="ns" x="775" y="480" text-anchor="middle">review the draft</text>
+<rect x="900" y="432" width="144" height="64" rx="13" fill="#FFFFFF" stroke="#007C92" stroke-width="1.5"/>
+<circle cx="930" cy="464" r="12" fill="#E1F0F3" stroke="#8FC0CB"/>
+<path d="M924 464 L929 470 L938 459" fill="none" stroke="#007C92" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="nt" x="952" y="468" fill="#007C92">Report</text>
+
+<line x1="852" y1="298" x2="800" y2="428" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="858" y="368">draft</text>
+<path d="M728 430 C690 372 770 322 838 300" fill="none" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<text class="lbl" x="690" y="392">&#8804; 1 revision</text>
+<line x1="850" y1="464" x2="896" y2="464" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="873" y="456" text-anchor="middle">approved</text>
+<text class="pat" x="775" y="518" text-anchor="middle" fill="#B4471F">reflection</text>
+
+<line x1="56" y1="558" x2="1044" y2="558" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="586">Every block is a pattern from the course &#8212; planner&#8594;executor, parallel fan-out, and reflection &#8212; assembled into one system.</text>
+</svg>

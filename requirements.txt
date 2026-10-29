@@ -1,0 +1,8 @@
+# Building LLM Agents — course dependencies
+# Install with:  pip install -r requirements.txt
+
+openai>=1.40,<2          # OpenAI-compatible client (talks to ai-gateway.sigma2.no)
+python-dotenv>=1.0       # loads the .env file
+jupyterlab>=4.0          # run the notebooks
+ipykernel>=6.29          # Jupyter kernel
+rich>=13.7               # nicer printing in a few notebooks

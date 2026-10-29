@@ -1,0 +1,80 @@
+<svg width="100%" viewBox="0 0 1080 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Three ways to get JSON out of a model, fragile to bulletproof</title>
+<desc id="d">An ascending staircase of three reliability tiers. Tier 1: ask for JSON in the prompt, fragile. Tier 2: strict prompt with temperature 0, better. Tier 3: native JSON mode, the reliable default.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,'Liberation Mono',monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.8px;}
+  .tname{font-size:16px;font-weight:700;fill:#243038;}
+  .tmeth{font-size:12.5px;fill:#6B7785;}
+  .tmono{font-size:12px;fill:#2E7385;}
+  .tfail{font-size:12px;}
+  .num{font-size:18px;font-weight:700;fill:#FFFFFF;}
+  .reco{font-size:10px;font-weight:700;fill:#FFFFFF;letter-spacing:.5px;}
+  .axis{font-size:11px;fill:#9AA4AD;}
+  .axistop{font-size:11px;font-weight:600;fill:#007C92;}
+  .take{font-size:13.5px;fill:#2E3038;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1080" height="680" fill="#FFFFFF"/>
+
+<text class="title" x="56" y="52">Three ways to get JSON out of a model</text>
+<text class="sub" x="56" y="80">Each tier is more reliable than the last &#8212; climb until parsing stops breaking.</text>
+<line x1="56" y1="96" x2="1020" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<path d="M110 600 L110 560 L410 560 L410 470 L710 470 L710 370 L990 370 L990 600 Z" fill="#EFF2F3"/>
+
+<line x1="80" y1="575" x2="80" y2="200" stroke="#9AA4AD" stroke-width="1.5" marker-end="url(#ah)"/>
+<text class="axistop" x="80" y="190" text-anchor="middle">bulletproof</text>
+<text class="axis" x="80" y="592" text-anchor="middle">fragile</text>
+<text class="axis" x="54" y="400" text-anchor="middle" transform="rotate(-90 54 400)">reliability</text>
+
+<rect x="110" y="386" width="280" height="174" rx="14" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="148" cy="424" r="18" fill="#FF956E"/>
+<text class="num" x="148" y="430" text-anchor="middle">1</text>
+<text class="eyebrow" x="176" y="419" fill="#B4471F">TIER 1 &#183; FRAGILE</text>
+<circle cx="332" cy="424" r="5" fill="#FF956E"/>
+<circle cx="350" cy="424" r="5" fill="#E2E6EA"/>
+<circle cx="368" cy="424" r="5" fill="#E2E6EA"/>
+<text class="tname" x="130" y="472">Ask for JSON in the prompt</text>
+<text class="tmeth" x="130" y="504">&#8220;Please reply with JSON.&#8221;</text>
+<polygon points="132,536 144,536 138,525" fill="#FF956E"/>
+<text class="tfail" x="150" y="536" fill="#B4471F">Fences or prose can break parsing.</text>
+
+<rect x="410" y="296" width="280" height="174" rx="14" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="448" cy="334" r="18" fill="#007C92"/>
+<text class="num" x="448" y="340" text-anchor="middle">2</text>
+<text class="eyebrow" x="476" y="329" fill="#007C92">TIER 2 &#183; BETTER</text>
+<circle cx="632" cy="334" r="5" fill="#007C92"/>
+<circle cx="650" cy="334" r="5" fill="#007C92"/>
+<circle cx="668" cy="334" r="5" fill="#E2E6EA"/>
+<text class="tname" x="430" y="376">Strict prompt +</text>
+<text class="tname" x="430" y="396">temperature 0</text>
+<text class="tmeth" x="430" y="422">Specify the exact shape; temp = 0.</text>
+<circle cx="437" cy="446" r="5" fill="#51626F"/>
+<text class="tfail" x="450" y="450" fill="#51626F">More reliable &#8212; still not guaranteed.</text>
+
+<rect x="710" y="196" width="280" height="174" rx="14" fill="#FFFFFF" stroke="#007C92" stroke-width="1.5"/>
+<circle cx="748" cy="234" r="18" fill="#007C92"/>
+<text class="num" x="748" y="240" text-anchor="middle">3</text>
+<text class="eyebrow" x="776" y="229" fill="#007C92">TIER 3 &#183; RELIABLE</text>
+<circle cx="932" cy="234" r="5" fill="#007C92"/>
+<circle cx="950" cy="234" r="5" fill="#007C92"/>
+<circle cx="968" cy="234" r="5" fill="#007C92"/>
+<text class="tname" x="730" y="276">Native JSON mode</text>
+<rect x="730" y="286" width="98" height="18" rx="9" fill="#007C92"/>
+<text class="reco" x="779" y="299" text-anchor="middle">RECOMMENDED</text>
+<text class="tmono mono" x="730" y="328">response_format: json_object</text>
+<path d="M731 350 L736 355 L744 344" fill="none" stroke="#007C92" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="tfail" x="752" y="354" fill="#007C92">Always valid JSON &#8212; the default.</text>
+
+<line x1="56" y1="626" x2="1020" y2="626" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="654">Prompting alone is fragile; pinning temperature helps; native JSON mode is the reliable default &#8212; start at tier 3 when you can.</text>
+</svg>

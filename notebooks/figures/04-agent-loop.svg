@@ -1,0 +1,69 @@
+<svg width="100%" viewBox="0 0 1080 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">The agent loop: reason, act, observe</title>
+<desc id="d">A chat model in a while-loop: reason, act, observe, repeat. The message list grows each pass. The loop ends when the model replies with no tool call, and a max-steps cap prevents runaway loops.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .nt{font-size:16px;font-weight:700;}
+  .ns{font-size:11px;fill:#6B7785;}
+  .lbl{font-size:11.5px;font-weight:600;fill:#6B7785;}
+  .badge{font-size:11px;font-weight:600;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1080" height="600" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">The agent loop: reason, act, observe</text>
+<text class="sub" x="56" y="80">An agent is just a chat model in a while-loop &#8212; each pass appends to the message list.</text>
+<line x1="56" y1="96" x2="1024" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<path d="M865 210 C865 110 215 110 215 210" fill="none" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="540" y="118" text-anchor="middle">loop &#8212; keep going</text>
+<rect x="400" y="158" width="280" height="24" rx="12" fill="#FFEDE5" stroke="#FBD9CB" stroke-width="1"/>
+<text class="badge" x="540" y="174" text-anchor="middle" fill="#B4471F">safety: max-steps cap, can&#8217;t run forever</text>
+
+<text class="mono" x="110" y="200" font-size="12" fill="#6B7785">while not done:</text>
+
+<rect x="110" y="210" width="210" height="96" rx="14" fill="#E1F0F3" stroke="#C5E0E6" stroke-width="1"/>
+<rect x="120" y="224" width="5" height="68" rx="2" fill="#007C92"/>
+<text class="nt" x="138" y="252" fill="#044A55">Reason</text>
+<text class="ns" x="138" y="274">pick the next action</text>
+
+<rect x="435" y="210" width="210" height="96" rx="14" fill="#FFEDE5" stroke="#FBD9CB" stroke-width="1"/>
+<rect x="445" y="224" width="5" height="68" rx="2" fill="#FF956E"/>
+<text class="nt" x="463" y="252" fill="#B4471F">Act</text>
+<text class="ns" x="463" y="274">call a tool</text>
+
+<rect x="760" y="210" width="210" height="96" rx="14" fill="#ECEEF1" stroke="#D8DDE1" stroke-width="1"/>
+<rect x="770" y="224" width="5" height="68" rx="2" fill="#51626F"/>
+<text class="nt" x="788" y="252" fill="#51626F">Observe</text>
+<text class="ns" x="788" y="274">append the result</text>
+
+<line x1="320" y1="258" x2="431" y2="258" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="375" y="250" text-anchor="middle">calls a tool</text>
+<line x1="645" y1="258" x2="756" y2="258" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="700" y="250" text-anchor="middle">returns result</text>
+
+<line x1="215" y1="308" x2="215" y2="418" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="240" y="362" fill="#007C92">model replies with no tool call</text>
+<rect x="110" y="420" width="240" height="70" rx="14" fill="#FFFFFF" stroke="#007C92" stroke-width="1.5"/>
+<circle cx="142" cy="455" r="14" fill="#E1F0F3" stroke="#8FC0CB" stroke-width="1.2"/>
+<path d="M135 455 L140 461 L150 449" fill="none" stroke="#007C92" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="nt" x="166" y="450" font-size="14" fill="#007C92">Return final answer</text>
+<text class="ns" x="166" y="468">the loop ends</text>
+
+<rect x="800" y="402" width="40" height="12" rx="3" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="845" y="402" width="40" height="12" rx="3" fill="#FFEDE5" stroke="#FBD9CB"/>
+<rect x="890" y="402" width="40" height="12" rx="3" fill="#ECEEF1" stroke="#D8DDE1"/>
+<rect x="800" y="420" width="130" height="12" rx="3" fill="#E1F0F3" stroke="#C5E0E6"/>
+<rect x="800" y="438" width="130" height="12" rx="3" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="lbl" x="865" y="472" text-anchor="middle">message list grows each pass</text>
+
+<line x1="56" y1="540" x2="1024" y2="540" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="568">The agent loop is one chat model called repeatedly &#8212; reason, act, observe &#8212; until it stops requesting tools, with a max-steps cap as a safety net.</text>
+</svg>

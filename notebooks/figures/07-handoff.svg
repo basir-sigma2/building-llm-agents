@@ -1,0 +1,56 @@
+<svg width="100%" viewBox="0 0 1080 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Sequential handoff between two agents</title>
+<desc id="d">A researcher agent with a search tool gathers notes; the plain text notes flow to a separate writer agent with no tools, which turns them into prose. Two separate contexts, no shared memory.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .bound{font-size:12px;font-weight:600;fill:#6B7785;}
+  .nt{font-size:15px;font-weight:700;fill:#FFFFFF;}
+  .ns{font-size:10.5px;fill:#FFFFFF;fill-opacity:.85;}
+  .chip{font-size:12px;font-weight:600;}
+  .lbl{font-size:11.5px;font-weight:600;fill:#007C92;}
+  .bar{font-size:10.5px;font-weight:600;fill:#B4471F;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#007C92" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1080" height="520" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Sequential handoff: one agent&#8217;s output is the next one&#8217;s input</text>
+<text class="sub" x="56" y="80">The researcher gathers notes; that plain text becomes the writer&#8217;s input &#8212; two separate agents, wired in code.</text>
+<line x1="56" y1="96" x2="1024" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="70" y="150" width="380" height="240" rx="16" fill="#FBFCFC" stroke="#CBD1D5" stroke-dasharray="5 4"/>
+<text class="bound" x="90" y="176">Researcher &#183; separate context</text>
+<rect x="110" y="200" width="160" height="80" rx="14" fill="#007C92"/>
+<text class="nt" x="190" y="236" text-anchor="middle">Researcher</text>
+<text class="ns" x="190" y="256" text-anchor="middle">gathers notes</text>
+<rect x="300" y="214" width="120" height="52" rx="12" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="chip mono" x="360" y="244" text-anchor="middle" fill="#51626F">search()</text>
+<line x1="270" y1="240" x2="296" y2="240" stroke="#007C92" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="bound" x="90" y="346" fill="#9AA4AD">has tools</text>
+
+<rect x="630" y="150" width="380" height="240" rx="16" fill="#FBFCFC" stroke="#CBD1D5" stroke-dasharray="5 4"/>
+<text class="bound" x="650" y="176">Writer &#183; separate context</text>
+<rect x="670" y="200" width="160" height="80" rx="14" fill="#FF956E"/>
+<text class="nt" x="750" y="236" text-anchor="middle" fill="#4A1B0C">Writer</text>
+<text class="ns" x="750" y="256" text-anchor="middle" fill="#4A1B0C" fill-opacity="0.75">writes prose</text>
+<rect x="860" y="214" width="120" height="52" rx="12" fill="#FFF6F1" stroke="#FBD9CB"/>
+<text class="chip" x="920" y="244" text-anchor="middle" fill="#B4471F">no tools</text>
+<text class="bound" x="650" y="346" fill="#9AA4AD">no tools</text>
+
+<rect x="468" y="216" width="144" height="48" rx="10" fill="#E1F0F3" stroke="#C5E0E6"/>
+<text class="chip" x="540" y="245" text-anchor="middle" fill="#044A55">notes (text)</text>
+<line x1="450" y1="240" x2="466" y2="240" stroke="#007C92" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="612" y1="240" x2="628" y2="240" stroke="#007C92" stroke-width="1.6" marker-end="url(#ah)"/>
+<text class="lbl" x="540" y="290" text-anchor="middle">plain text out &#8594; in</text>
+<line x1="540" y1="320" x2="540" y2="360" stroke="#E2A188" stroke-width="1.4" stroke-dasharray="4 4"/>
+<text class="bar" x="540" y="378" text-anchor="middle">no shared memory</text>
+
+<line x1="56" y1="452" x2="1024" y2="452" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="480">&#8220;Multi-agent&#8221; just means one agent&#8217;s text output is passed as the next agent&#8217;s input &#8212; no shared memory, just ordinary wiring.</text>
+</svg>

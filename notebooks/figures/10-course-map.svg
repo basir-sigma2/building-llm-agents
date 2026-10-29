@@ -1,0 +1,70 @@
+<svg width="100%" viewBox="0 0 1100 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">The course as a journey: 01 to 10</title>
+<desc id="d">A map of the ten-part course. Parts 01 to 05 run left to right on the top row, 06 to 10 run right to left on the bottom row, each feeding the next. Both the orchestration patterns part (08) and advanced orchestration (09) feed the emphasised capstone (10).</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .nl{font-size:12.5px;font-weight:600;fill:#243038;}
+  .num{font-size:12px;font-weight:700;fill:#FFFFFF;}
+  .dep{font-size:11.5px;font-weight:600;fill:#6B7785;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1100" height="600" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">The course as a journey: 01 &#8594; 10</text>
+<text class="sub" x="56" y="80">Each part builds on the last &#8212; from a single call to a fully assembled multi-agent capstone.</text>
+<line x1="56" y1="96" x2="1044" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="60" y="180" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="140" cy="206" r="14" fill="#007C92"/><text class="num" x="140" y="210" text-anchor="middle">01</text>
+<text class="nl" x="140" y="234" text-anchor="middle">First LLM call</text>
+<rect x="260" y="180" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="340" cy="206" r="14" fill="#007C92"/><text class="num" x="340" y="210" text-anchor="middle">02</text>
+<text class="nl" x="340" y="234" text-anchor="middle">Structured output</text>
+<rect x="460" y="180" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="540" cy="206" r="14" fill="#007C92"/><text class="num" x="540" y="210" text-anchor="middle">03</text>
+<text class="nl" x="540" y="234" text-anchor="middle">Tool calling</text>
+<rect x="660" y="180" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="740" cy="206" r="14" fill="#007C92"/><text class="num" x="740" y="210" text-anchor="middle">04</text>
+<text class="nl" x="740" y="234" text-anchor="middle">The agent loop</text>
+<rect x="860" y="180" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="940" cy="206" r="14" fill="#007C92"/><text class="num" x="940" y="210" text-anchor="middle">05</text>
+<text class="nl" x="940" y="234" text-anchor="middle">Memory</text>
+
+<rect x="860" y="370" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="940" cy="396" r="14" fill="#007C92"/><text class="num" x="940" y="400" text-anchor="middle">06</text>
+<text class="nl" x="940" y="424" text-anchor="middle">Robust single agent</text>
+<rect x="660" y="370" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="740" cy="396" r="14" fill="#007C92"/><text class="num" x="740" y="400" text-anchor="middle">07</text>
+<text class="nl" x="740" y="424" text-anchor="middle">Multi-agent basics</text>
+<rect x="460" y="370" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="540" cy="396" r="14" fill="#007C92"/><text class="num" x="540" y="400" text-anchor="middle">08</text>
+<text class="nl" x="540" y="424" text-anchor="middle">Orchestration patterns</text>
+<rect x="260" y="370" width="160" height="70" rx="14" fill="#E1F0F3" stroke="#C5E0E6"/>
+<circle cx="340" cy="396" r="14" fill="#007C92"/><text class="num" x="340" y="400" text-anchor="middle">09</text>
+<text class="nl" x="340" y="424" text-anchor="middle">Advanced orchestration</text>
+<rect x="60" y="368" width="160" height="74" rx="14" fill="#007C92" stroke="#006374" stroke-width="2"/>
+<circle cx="140" cy="396" r="14" fill="#FFFFFF"/><text class="num" x="140" y="400" text-anchor="middle" fill="#007C92">10</text>
+<text class="nl" x="140" y="424" text-anchor="middle" fill="#FFFFFF">Capstone</text>
+
+<line x1="220" y1="215" x2="256" y2="215" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="420" y1="215" x2="456" y2="215" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="620" y1="215" x2="656" y2="215" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="820" y1="215" x2="856" y2="215" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="940" y1="250" x2="940" y2="366" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="860" y1="405" x2="824" y2="405" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="660" y1="405" x2="624" y2="405" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="460" y1="405" x2="424" y2="405" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="260" y1="405" x2="224" y2="405" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+
+<path d="M540 440 C460 516 240 516 150 446" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text class="dep" x="345" y="512" text-anchor="middle">08 &amp; 09 both feed the capstone</text>
+
+<line x1="56" y1="556" x2="1044" y2="556" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="584">Single call &#8594; structured output &#8594; tools &#8594; agent loop &#8594; memory &#8594; robust agent &#8594; multi-agent &#8594; patterns &#8594; advanced &#8594; capstone.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg width="100%" viewBox="0 0 1080 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Why parallel execution wins</title>
+<desc id="d">On a time axis, sequential execution lays five task bars end to end so total time is their sum, while parallel execution stacks them at the same start so they finish in about one task time, then a short aggregate step.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .take{font-size:13.5px;fill:#2E3038;}
+  .rowt{font-size:14px;font-weight:700;fill:#243038;}
+  .br{font-size:12px;font-weight:600;fill:#6B7785;}
+  .tk{font-size:11px;font-weight:600;fill:#FFFFFF;}
+  .ax{font-size:12px;font-weight:600;fill:#6B7785;}
+  .save{font-size:12px;font-weight:700;fill:#007C92;}
+  .agg{font-size:10.5px;font-weight:600;fill:#51626F;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="at" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#007C92" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1080" height="520" fill="#FFFFFF"/>
+<text class="title" x="56" y="52">Why parallel execution wins</text>
+<text class="sub" x="56" y="80">Sequential runs tasks one after another; parallel runs them at once, then aggregates.</text>
+<line x1="56" y1="96" x2="1024" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<text class="rowt" x="120" y="150">Sequential</text>
+<line x1="120" y1="166" x2="876" y2="166" stroke="#9AA4AD" stroke-width="1"/>
+<line x1="120" y1="166" x2="120" y2="172" stroke="#9AA4AD" stroke-width="1"/>
+<line x1="876" y1="166" x2="876" y2="172" stroke="#9AA4AD" stroke-width="1"/>
+<text class="br" x="498" y="160" text-anchor="middle">total time = sum of all tasks</text>
+<rect x="120" y="178" width="148" height="40" rx="5" fill="#9FD0DA"/><text class="tk" x="194" y="203" text-anchor="middle">task 1</text>
+<rect x="272" y="178" width="148" height="40" rx="5" fill="#7FC2CF"/><text class="tk" x="346" y="203" text-anchor="middle">task 2</text>
+<rect x="424" y="178" width="148" height="40" rx="5" fill="#5DBBC9"/><text class="tk" x="498" y="203" text-anchor="middle">task 3</text>
+<rect x="576" y="178" width="148" height="40" rx="5" fill="#3FA6B7"/><text class="tk" x="650" y="203" text-anchor="middle">task 4</text>
+<rect x="728" y="178" width="148" height="40" rx="5" fill="#1F8EA1"/><text class="tk" x="802" y="203" text-anchor="middle">task 5</text>
+
+<text class="rowt" x="120" y="288">Parallel</text>
+<line x1="120" y1="304" x2="362" y2="304" stroke="#9AA4AD" stroke-width="1"/>
+<line x1="120" y1="304" x2="120" y2="310" stroke="#9AA4AD" stroke-width="1"/>
+<line x1="362" y1="304" x2="362" y2="310" stroke="#9AA4AD" stroke-width="1"/>
+<text class="br" x="241" y="298" text-anchor="middle">&#8776; one task + aggregate</text>
+<rect x="120" y="316" width="148" height="14" rx="3" fill="#1F8EA1"/>
+<rect x="120" y="332" width="148" height="14" rx="3" fill="#3FA6B7"/>
+<rect x="120" y="348" width="148" height="14" rx="3" fill="#5DBBC9"/>
+<rect x="120" y="364" width="148" height="14" rx="3" fill="#7FC2CF"/>
+<rect x="120" y="380" width="148" height="14" rx="3" fill="#9FD0DA"/>
+<rect x="272" y="338" width="90" height="34" rx="6" fill="#ECEEF1" stroke="#D8DDE1"/>
+<text class="agg" x="317" y="359" text-anchor="middle">aggregate</text>
+
+<line x1="876" y1="218" x2="876" y2="418" stroke="#CBD1D5" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="362" y1="394" x2="362" y2="418" stroke="#CBD1D5" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="366" y1="406" x2="872" y2="406" stroke="#007C92" stroke-width="1.5" marker-start="url(#at)" marker-end="url(#at)"/>
+<text class="save" x="619" y="400" text-anchor="middle">wall-clock saved</text>
+<line x1="120" y1="430" x2="980" y2="430" stroke="#C9CFD3" stroke-width="1.2" marker-end="url(#ah)"/>
+<text class="ax" x="980" y="448" text-anchor="end">time</text>
+
+<line x1="56" y1="464" x2="1024" y2="464" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="492">Running independent workers concurrently collapses total time from the sum of all tasks to roughly the time of a single one.</text>
+</svg>

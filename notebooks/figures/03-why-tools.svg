@@ -1,0 +1,85 @@
+<svg width="100%" viewBox="0 0 1092 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Why a model needs tools</title>
+<desc id="d">Left, without a tool: the model guesses 1234 times 5678 and returns 7,005,152, confidently wrong. Right, with a tool: the model calls a calculator that computes the real result 7,006,652, correct.</desc>
+<style>
+  text{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,'Liberation Mono',monospace;}
+  .title{font-size:27px;font-weight:700;fill:#243038;}
+  .sub{font-size:15px;fill:#6B7785;}
+  .ptitle{font-size:17px;font-weight:700;fill:#243038;}
+  .ptag{font-size:11px;font-weight:600;}
+  .role{font-size:10px;font-weight:700;letter-spacing:.5px;}
+  .content{font-size:13px;fill:#243038;}
+  .mslab{font-size:15px;font-weight:700;fill:#FFFFFF;}
+  .mslabsub{font-size:10.5px;fill:#FFFFFF;fill-opacity:.85;}
+  .toolln{font-size:10px;fill:#FFFFFF;}
+  .toolres{font-size:12px;font-weight:700;fill:#FFFFFF;}
+  .callout2{font-size:10.5px;font-weight:600;}
+  .bignum{font-size:34px;font-weight:800;}
+  .verdict{font-size:13px;font-weight:600;}
+  .vs{font-size:11px;font-weight:700;fill:#9AA4AD;}
+  .take{font-size:13.5px;fill:#2E3038;}
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#9AA4AD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1092" height="600" fill="#FFFFFF"/>
+
+<text class="title" x="56" y="52">Why a model needs tools</text>
+<text class="sub" x="56" y="80">A language model predicts text &#8212; it doesn&#8217;t compute. Tools give it abilities it genuinely lacks.</text>
+<line x1="56" y1="96" x2="1036" y2="96" stroke="#E6E9EC" stroke-width="1"/>
+
+<rect x="56" y="140" width="470" height="380" rx="16" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="80" cy="166" r="5" fill="#FF956E"/>
+<text class="ptitle" x="94" y="171">Without a tool</text>
+<rect x="422" y="152" width="80" height="22" rx="11" fill="#FFEDE5" stroke="#FBD9CB" stroke-width="1"/>
+<text class="ptag" x="462" y="167" text-anchor="middle" fill="#B4471F">guesses</text>
+<line x1="80" y1="190" x2="502" y2="190" stroke="#EEF1F3" stroke-width="1"/>
+<rect x="80" y="206" width="422" height="44" rx="9" fill="#E1F0F3" stroke="#C5E0E6" stroke-width="1"/>
+<rect x="86" y="215" width="4" height="26" rx="2" fill="#007C92"/>
+<text class="role" x="98" y="224" fill="#007C92">USER</text>
+<text class="content" x="98" y="239">What is 1234 &#215; 5678?</text>
+<line x1="291" y1="254" x2="291" y2="278" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="216" y="282" width="150" height="64" rx="12" fill="#007C92"/>
+<text class="mslab" x="291" y="312" text-anchor="middle">Model</text>
+<text class="mslabsub" x="291" y="330" text-anchor="middle">guesses token by token</text>
+<line x1="291" y1="348" x2="291" y2="412" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<circle cx="176" cy="452" r="16" fill="#FBE3DB" stroke="#E2A188" stroke-width="1.2"/>
+<path d="M170 446 L182 458 M182 446 L170 458" stroke="#C0492A" stroke-width="2.5" stroke-linecap="round"/>
+<text class="bignum" x="291" y="464" text-anchor="middle" fill="#B4471F">7,005,152</text>
+<text class="verdict" x="291" y="494" text-anchor="middle" fill="#B4471F">confidently wrong</text>
+
+<circle cx="546" cy="330" r="16" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<text class="vs" x="546" y="334" text-anchor="middle">vs</text>
+
+<rect x="566" y="140" width="470" height="380" rx="16" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+<circle cx="590" cy="166" r="5" fill="#007C92"/>
+<text class="ptitle" x="604" y="171">With a tool</text>
+<rect x="944" y="152" width="92" height="22" rx="11" fill="#E1F0F3" stroke="#C5E0E6" stroke-width="1"/>
+<text class="ptag" x="990" y="167" text-anchor="middle" fill="#007C92">computes</text>
+<line x1="590" y1="190" x2="1012" y2="190" stroke="#EEF1F3" stroke-width="1"/>
+<rect x="590" y="206" width="422" height="44" rx="9" fill="#E1F0F3" stroke="#C5E0E6" stroke-width="1"/>
+<rect x="596" y="215" width="4" height="26" rx="2" fill="#007C92"/>
+<text class="role" x="608" y="224" fill="#007C92">USER</text>
+<text class="content" x="608" y="239">What is 1234 &#215; 5678?</text>
+<line x1="801" y1="254" x2="801" y2="272" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="726" y="276" width="150" height="44" rx="12" fill="#007C92"/>
+<text class="mslab" x="801" y="294" text-anchor="middle">Model</text>
+<text class="mslabsub" x="801" y="310" text-anchor="middle">requests a tool</text>
+<line x1="801" y1="322" x2="801" y2="334" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="726" y="338" width="150" height="44" rx="10" fill="#51626F"/>
+<text class="toolln mono" x="801" y="356" text-anchor="middle">calculator(1234, 5678)</text>
+<text class="toolres mono" x="801" y="373" text-anchor="middle">= 7,006,652</text>
+<text class="callout2" x="886" y="364" fill="#007C92">&#8592; real computation</text>
+<line x1="801" y1="384" x2="801" y2="412" stroke="#9AA4AD" stroke-width="1.6" marker-end="url(#ah)"/>
+<circle cx="686" cy="452" r="16" fill="#E1F0F3" stroke="#8FC0CB" stroke-width="1.2"/>
+<path d="M679 452 L684 458 L694 446" fill="none" stroke="#007C92" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="bignum" x="801" y="464" text-anchor="middle" fill="#007C92">7,006,652</text>
+<text class="verdict" x="801" y="494" text-anchor="middle" fill="#007C92">grounded &amp; correct</text>
+
+<line x1="56" y1="548" x2="1036" y2="548" stroke="#E6E9EC" stroke-width="1"/>
+<text class="take" x="56" y="576">A model predicts text, so it guesses at arithmetic &#8212; confidently and wrongly. A tool runs the real computation, so the answer is grounded and correct.</text>
+</svg>
